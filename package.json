@@ -1,0 +1,27 @@
+{
+  "name": "w-api",
+  "version": "1.0.0",
+  "description": "boilerplate for api",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vildantursic/w-api.git"
+  },
+  "keywords": [
+    "api",
+    "expressjs",
+    "nodejs"
+  ],
+  "author": " <vildantursic@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vildantursic/w-api/issues"
+  },
+  "homepage": "https://github.com/vildantursic/w-api#readme"
+}
