@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "start": "nodemon app.js",
     "test": "npm run test"
   },
   "repository": {
@@ -23,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/vildantursic/w-api/issues"
   },
-  "homepage": "https://github.com/vildantursic/w-api#readme"
+  "homepage": "https://github.com/vildantursic/w-api#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
 }
