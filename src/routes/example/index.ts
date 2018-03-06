@@ -2,7 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 const router = express.Router();
 
-import {} from './helpers/example.helper.js';
+import Example from '../../models/example/index.model';
 
 /**
  *
