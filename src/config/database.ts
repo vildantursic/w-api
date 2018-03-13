@@ -1,16 +1,15 @@
-const mongoose = require('mongoose');
+import Sequelize from 'sequelize';
 
-const options = {
-  useMongoClient: true,
-  autoIndex: false, // Don't build indexes
-  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
-  // If not connected, return errors immediately rather than waiting for reconnect
-  bufferMaxEntries: 0
-};
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'postgres',
 
-mongoose.connect('mongodb://localhost/example', options);
-
-const db = mongoose.connection;
-export default db;
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  },
+  operatorsAliases: false
+});
+export default sequelize;

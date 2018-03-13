@@ -1,6 +1,7 @@
-import mongoose from 'mongoose';
+import Sequelize from 'sequelize';
 
-const exampleSchema = new mongoose.Schema({
-  name: String,
-});
+const exampleSchema = {
+  example: Sequelize.STRING,
+};
+
 export default exampleSchema;

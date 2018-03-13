@@ -1,5 +1,6 @@
-import mongoose from 'mongoose';
-import exampleSchema from './index.schema';
+import sequelize from '../../config/database';
+import exampleSchema from 'index.schema';
 
-const Example = mongoose.model('Example', exampleSchema);
+const Example = sequelize.define('user', exampleSchema);
+
 export default Example;

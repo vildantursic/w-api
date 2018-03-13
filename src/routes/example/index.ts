@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 const router = express.Router();
 
+import sequelize from '../../config/database';
 import Example from '../../models/example/index.model';
 
 /**
@@ -15,7 +16,13 @@ router.get('/example', (req: Request, res: Response) => {
  *
  */
 router.post('/example', (req: Request, res: Response) => {
-  res.send('W-API example POST');
+  sequelize.sync()
+  .then(() => Example.create({
+    example: 'example'
+  }))
+  .then(data => {
+    res.json(data.toJSON());
+  });
 });
 
 /**
