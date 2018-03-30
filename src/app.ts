@@ -1,5 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import graphqlHTTP from 'express-graphql';
+import { ExampleSchema } from './models/example/index.schema';
 
 const app = express();
 
@@ -12,6 +14,11 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/', graphqlHTTP({
+  schema: ExampleSchema,
+  graphiql: true
+}));
 
 /**
  * ROUTES

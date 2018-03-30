@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import { GraphQLSchema } from 'graphql';
+import { ExampleRootType } from './index.type';
 
-const exampleSchema = new mongoose.Schema({
-  name: String,
+export const ExampleSchema = new GraphQLSchema({
+  query: ExampleRootType
 });
-export default exampleSchema;
