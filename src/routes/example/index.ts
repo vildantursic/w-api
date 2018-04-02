@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import Example from './models/example/index.model';
+import Example from '../../models/example/index.model';
 
 /**
  *
