@@ -1,9 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import graphqlHTTP from 'express-graphql';
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
 
-import { schema } from './graph/index.schema';
-import { root } from './graph/index.root';
+import { resolvers } from './graph/index.resolvers';
+import { typeDefs } from './graph/index.typedefs';
 
 const app = express();
 
@@ -24,10 +25,9 @@ const example = require('./routes/example/index');
 
 app.use('/api/v1/', example);
 
-app.use('/graphql', graphqlHTTP({
-    schema: schema,
-    rootValue: root,
-    graphiql: true,
-}));
+const schema = makeExecutableSchema({typeDefs, resolvers});
+
+app.use('/graphql', bodyParser.json(), graphqlExpress({schema}));
+app.use('/graphiql', graphiqlExpress({endpointURL: '/graphql'}));
 
 app.listen(3000, () => console.log('W-API listening on port 3000!'));
