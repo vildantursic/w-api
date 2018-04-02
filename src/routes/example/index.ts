@@ -7,36 +7,28 @@ import Example from '../../models/example/index.model';
  *
  */
 router.get('/example', (req: Request, res: Response) => {
-    res.json({
-        message: 'W-API example GET'
-    });
+    res.json();
 });
 
 /**
  *
  */
 router.post('/example', (req: Request, res: Response) => {
-    res.json({
-        message: 'W-API example POST'
-    });
+    res.json();
 });
 
 /**
  *
  */
 router.put('/example/:id', (req: Request, res: Response) => {
-    res.json({
-        message: 'W-API example PUT'
-    });
+    res.json();
 });
 
 /**
  *
  */
 router.delete('/example/:id', (req: Request, res: Response) => {
-    res.json({
-        message: 'W-API example DELETE'
-    });
+    res.json();
 });
 
 module.exports = router;
