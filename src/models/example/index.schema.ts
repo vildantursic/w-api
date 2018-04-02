@@ -1,6 +1,11 @@
-import { GraphQLSchema } from 'graphql';
-import { ExampleRootType } from './index.type';
+import { buildSchema } from 'graphql';
 
-export const ExampleSchema = new GraphQLSchema({
-  query: ExampleRootType
-});
+export const typeDefs = [`
+type Query {
+  hello: String
+}
+
+schema {
+  query: Query
+}
+`];
